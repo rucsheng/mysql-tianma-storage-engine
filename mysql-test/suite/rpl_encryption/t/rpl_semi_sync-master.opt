@@ -1,0 +1,1 @@
+$SEMISYNC_PLUGIN_OPT --keyring_file_data=$MYSQL_TMP_DIR/mysecret_keyring --force-restart

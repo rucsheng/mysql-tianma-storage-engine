@@ -1,0 +1,1 @@
+--source suite/rpl_gtid/t/rpl_trx_boundary_parser_stmt.test
