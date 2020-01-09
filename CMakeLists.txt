@@ -427,6 +427,12 @@ INCLUDE(curl)
 INCLUDE(prepend_append_cflags_if_supported)
 INCLUDE(rapidjson)
 
+FIND_PATH(COS_INCLUDE_DIR NAMES cos_api.h PATHS libcos/include)
+FIND_LIBRARY(COS_LIB NAMES libcossdk.a PATHS libcos/lib)
+IF((NOT COS_INCLUDE_DIR) OR (NOT COS_LIB))
+    MESSAGE(FATAL_ERROR "Fail to find cos SDK library.")
+ENDIF()
+
 OPTION(DISABLE_SHARED 
  "Don't build shared libraries, compile code as position-dependent" OFF)
 IF(DISABLE_SHARED)
